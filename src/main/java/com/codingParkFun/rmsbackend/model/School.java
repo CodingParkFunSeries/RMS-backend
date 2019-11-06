@@ -17,19 +17,33 @@ public class School {
     public void setName( String name ) {
         this.name = name;
     }
+
     public String getName() {
         return name;
     }
+
     public void setAddress( String address ) {
         this.address = address;
     }
+
     public String getAddress() {
         return address;
     }
+
     public void setId( Long id ) {
         this.id = id;
     }
+
     public Long getId() {
         return id;
+    }
+
+    @Override
+    public String toString() {
+        return "School{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 }
