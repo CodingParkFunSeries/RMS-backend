@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class SchoolControllerErrorAdvice {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler({RuntimeException.class})
-    public void handle() {}
+    public void handle() {
+    }
 
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler({IdDoesNotExistException.class})
-    public void handle(IdDoesNotExistException e) {
+    public void handle( IdDoesNotExistException e ) {
     }
 
 }

@@ -25,12 +25,13 @@ public class SchoolController {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void deleteSchool(@PathVariable Long id){
-        if(id==null){
-            throw new IdDoesNotExistException("Given school not present");
+    public void deleteSchool( @PathVariable Long id ) {
+        if (id == null) {
+            throw new IdDoesNotExistException( "Given school not present" );
         }
-        schoolService.delete(id);
+        schoolService.delete( id );
     }
+
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<School> getAllSchools() {
@@ -40,8 +41,8 @@ public class SchoolController {
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Optional<School> getSchool( @PathVariable Long id ) {
-        if(id==null){
-           throw new IdDoesNotExistException("Given school not present");
+        if (id == null) {
+            throw new IdDoesNotExistException( "Given school not present" );
         }
         return schoolService.getById( id );
     }

@@ -25,7 +25,7 @@ public class SchoolService {
         return (List<School>) schoolRepository.findAll();
     }
 
-    public void  delete( Long id ) {
+    public void delete( Long id ) {
         schoolRepository.deleteById( id );
     }
 }
