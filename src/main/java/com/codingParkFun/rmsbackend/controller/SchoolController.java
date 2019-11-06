@@ -19,7 +19,7 @@ public class SchoolController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void createSchool( @RequestBody School school ) {
+    public void createSchool(@RequestBody School school ) {
         schoolService.create( school );
     }
 
