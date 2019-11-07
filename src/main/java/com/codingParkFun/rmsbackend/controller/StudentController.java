@@ -47,7 +47,7 @@ public class StudentController {
 		return studentService.getStudentsInBatch(schoolId, batchId);
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/{studentId}")
 	@ResponseStatus(HttpStatus.OK)
 	public Optional<Student> getStudent(@PathVariable Long studentId) {
 		if (studentId == null) {
