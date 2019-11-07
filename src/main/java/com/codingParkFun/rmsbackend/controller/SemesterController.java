@@ -58,7 +58,7 @@ public class SemesterController {
 	@GetMapping()
 	@ResponseStatus(HttpStatus.OK)
 	@RequestMapping("{semesterId}")
-	public Optional<Semester> getStudents(@PathVariable long schoolId, @PathVariable long semesterId) {
+	public Optional<Semester> getSemester(@PathVariable long schoolId, @PathVariable long semesterId) {
 		return semesterService.getById(semesterId);
 	}
 }

@@ -26,27 +26,30 @@ public class BatchController {
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public void createGroup(@PathVariable String schoolId, @RequestBody Batch group) {
-		long id = Long.parseLong( schoolId.substring( 1,schoolId.length()-1 ) );
-		if (group.getSchoolId() == null) {
-			group.setSchoolId(id);
+	public void createBatch(@PathVariable Long schoolId, @RequestBody Batch batch) {
+		
+		if (batch.getSchoolId() == null) {
+			batch.setSchoolId(schoolId);
 		}
-		if (group.getSchoolId() != id) {
-			throw new SchoolIdMismatchException("School Id mismatch");}
-		batchService.create(group);
+		
+		if (batch.getSchoolId() != schoolId) {
+			throw new SchoolIdMismatchException("School Id mismatch");
+		}
+		
+		batchService.create(batch);
 	}
 
 	@GetMapping
 	@ResponseStatus(HttpStatus.OK)
-	public List<Batch> getStudents(@PathVariable String schoolId) {
-		long id = Long.parseLong( schoolId.substring( 1,schoolId.length()-1 ) );
-		return batchService.getGroupBySchoolId(id);
+	public List<Batch> getBatches(@PathVariable Long schoolId) {
+		return batchService.getBatchesBySchoolId(schoolId);
 	}
 
 	@GetMapping("{batchId}")
 	@ResponseStatus(HttpStatus.OK)
-	public Optional<Batch> getStudents(@PathVariable  String schoolId, @PathVariable long batchId) {
-		return batchService.getGroupById(batchId);
+	@RequestMapping("{batchId}")
+	public Optional<Batch> getBatch(@PathVariable Long schoolId, @PathVariable Long batchId) {
+		return batchService.getBatchById(batchId);
 	}
 
 }
