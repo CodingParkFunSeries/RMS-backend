@@ -19,11 +19,11 @@ public class BatchService {
 		groupRepository.save(group);
 	}
 
-	public List<Batch> getGroupBySchoolId(Long schoolId) {
+	public List<Batch> getBatchesBySchoolId(Long schoolId) {
 		return (List<Batch>) groupRepository.findBySchoolId(schoolId);
 	}
 
-	public Optional<Batch> getGroupById(Long groupId) {
+	public Optional<Batch> getBatchById(Long groupId) {
 		return (Optional<Batch>) groupRepository.findById(groupId);
 	}
 }
