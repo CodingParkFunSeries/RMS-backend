@@ -1,10 +1,10 @@
 package com.codingParkFun.rmsbackend.exception;
 
-public class SchoolIdMismatchException extends RuntimeException {
+public class IdMismatchException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
 
-	public SchoolIdMismatchException(String message) {
+	public IdMismatchException(String message) {
 		super(message);
 	}
 

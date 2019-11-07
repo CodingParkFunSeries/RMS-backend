@@ -19,8 +19,8 @@ class StudentService {
         studentRepository.save( student );
     }
 
-    public List<Student> get() {
-        return (List<Student>) studentRepository.findAll();
+    public List<Student> getStudentsInBatch(Long schoolId, Long batchId) {
+        return (List<Student>) studentRepository.findBySchoolIdAndBatchId(schoolId, batchId);
     }
 
     public Optional<Student> getById( Long id ) {
@@ -31,7 +31,7 @@ class StudentService {
         studentRepository.deleteById( id );
     }
 
-    public void deleteAll() {
-        studentRepository.deleteAll();
+    public void deleteStudentsInBatch(Long schoolId, Long batchId) {
+        studentRepository.deleteBySchoolIdAndBatchId(schoolId, batchId);
     }
 }

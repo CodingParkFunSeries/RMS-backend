@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import com.codingParkFun.rmsbackend.exception.SchoolIdMismatchException;
+import com.codingParkFun.rmsbackend.exception.IdMismatchException;
 
 @ControllerAdvice
 public class BatchControllerErrorAdvice {

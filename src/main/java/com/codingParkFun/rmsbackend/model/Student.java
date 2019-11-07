@@ -1,155 +1,162 @@
 package com.codingParkFun.rmsbackend.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import javax.persistence.*;
 import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Student {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String name;
+	private String Gender;
+	private Date birthDate;
+	private String address;
+	private String email;
+	private String nationality;
+	private Date enrollmentDate;
+	private String zipCode;
+	private String city;
+	private String state;
+	private String country;
+	private Long schoolId;
+	private Long batchId;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    private String Gender;
-    private Date birthDate;
-    private String address;
-    private String email;
-    private String nationality;
-    private Date enrollmentDate;
-    private String zipCode;
-    private String city;
-    private String state;
-    private String country;
+	public String getAddress() {
+		return address;
+	}
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "school_id")
-    @JsonIgnore
-    private School schoolId;
+	public void setAddress(String address) {
+		this.address = address;
+	}
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "batch_id")
-    @JsonIgnore
-    private Batch batchId;
+	public String getGender() {
+		return Gender;
+	}
 
+	public void setGender(String gender) {
+		Gender = gender;
+	}
 
-    public String getAddress() {
-        return address;
-    }
+	public Date getBirthDate() {
+		return birthDate;
+	}
 
-    public void setAddress( String address ) {
-        this.address = address;
-    }
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
+	}
 
-    public String getGender() {
-        return Gender;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public void setGender( String gender ) {
-        Gender = gender;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
+	public String getNationality() {
+		return nationality;
+	}
 
-    public Date getBirthDate() {
-        return birthDate;
-    }
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
+	}
 
-    public void setBirthDate( Date birthDate ) {
-        this.birthDate = birthDate;
-    }
+	public Date getEnrollmentDate() {
+		return enrollmentDate;
+	}
 
+	public void setEnrollmentDate(Date enrollmentDate) {
+		this.enrollmentDate = enrollmentDate;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public String getMobileNumber() {
+		return mobileNumber;
+	}
 
-    public void setEmail( String email ) {
-        this.email = email;
-    }
+	public void setMobileNumber(String mobileNumber) {
+		this.mobileNumber = mobileNumber;
+	}
 
+	private String mobileNumber;
 
-    public String getNationality() {
-        return nationality;
-    }
+	public String getCity() {
+		return city;
+	}
 
-    public void setNationality( String nationality ) {
-        this.nationality = nationality;
-    }
+	public void setCity(String city) {
+		this.city = city;
+	}
 
+	public String getZipCode() {
+		return zipCode;
+	}
 
-    public Date getEnrollmentDate() {
-        return enrollmentDate;
-    }
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
+	}
 
-    public void setEnrollmentDate( Date enrollmentDate ) {
-        this.enrollmentDate = enrollmentDate;
-    }
+	public String getState() {
+		return state;
+	}
 
+	public void setState(String state) {
+		this.state = state;
+	}
 
-    public String getMobileNumber() {
-        return mobileNumber;
-    }
+	public String getCountry() {
+		return country;
+	}
 
-    public void setMobileNumber( String mobileNumber ) {
-        this.mobileNumber = mobileNumber;
-    }
+	public void setCountry(String country) {
+		this.country = country;
+	}
 
-    private String mobileNumber;
+	public Long getId() {
+		return id;
+	}
 
-    public String getCity() {
-        return city;
-    }
+	public void setId(Long id) {
 
-    public void setCity( String city ) {
-        this.city = city;
-    }
+		this.id = id;
+	}
 
+	public String getName() {
 
-    public String getZipCode() {
-        return zipCode;
-    }
+		return name;
+	}
 
-    public void setZipCode( String zipCode ) {
-        this.zipCode = zipCode;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
+	public Long getSchoolId() {
+		return schoolId;
+	}
 
-    public String getState() {
-        return state;
-    }
+	public void setSchoolId(Long schoolId) {
+		this.schoolId = schoolId;
+	}
 
-    public void setState( String state ) {
-        this.state = state;
-    }
+	public Long getBatchId() {
+		return batchId;
+	}
 
+	public void setBatchId(Long batchId) {
+		this.batchId = batchId;
+	}
 
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry( String country ) {
-        this.country = country;
-    }
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId( Long id ) {
-
-        this.id = id;
-    }
-
-    public String getName() {
-
-        return name;
-    }
-
-    public void setName( String name ) {
-        this.name = name;
-    }
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", Gender=" + Gender + ", birthDate=" + birthDate + ", address="
+				+ address + ", email=" + email + ", nationality=" + nationality + ", enrollmentDate=" + enrollmentDate
+				+ ", zipCode=" + zipCode + ", city=" + city + ", state=" + state + ", country=" + country
+				+ ", schoolId=" + schoolId + ", batchId=" + batchId + ", mobileNumber=" + mobileNumber + "]";
+	}
 
 }
