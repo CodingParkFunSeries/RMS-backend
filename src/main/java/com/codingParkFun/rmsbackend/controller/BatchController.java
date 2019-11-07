@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.codingParkFun.rmsbackend.exception.BatchMismatchException;
+import com.codingParkFun.rmsbackend.exception.SchoolIdMismatchException;
 import com.codingParkFun.rmsbackend.model.Batch;
 import com.codingParkFun.rmsbackend.service.BatchService;
 
@@ -33,7 +33,7 @@ public class BatchController {
 		}
 		
 		if (group.getSchoolId() != schoolId) {
-			throw new BatchMismatchException("School Id mismatch");
+			throw new SchoolIdMismatchException("School Id mismatch");
 		}
 		
 		batchService.create(group);
