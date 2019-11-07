@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.codingParkFun.rmsbackend.exception.IdDoesNotExistException;
-import com.codingParkFun.rmsbackend.exception.SchoolIdMismatchException;
+import com.codingParkFun.rmsbackend.exception.IdMismatchException;
 import com.codingParkFun.rmsbackend.model.Semester;
 import com.codingParkFun.rmsbackend.service.SemesterService;
 
@@ -34,7 +34,7 @@ public class SemesterController {
 		}
 
 		if (semester.getSchoolId() != schoolId) {
-			throw new SchoolIdMismatchException("School Id mismatch");
+			throw new IdMismatchException("School Id mismatch");
 		}
 
 		semesterService.create(semester);
