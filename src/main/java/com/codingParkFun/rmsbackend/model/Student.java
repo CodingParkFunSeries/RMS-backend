@@ -24,6 +24,7 @@ public class Student {
     private String state;
     private String country;
 
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "school_id")
     @JsonIgnore
@@ -35,6 +36,14 @@ public class Student {
     private Batch batchId;
 
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId( Long id ) {
+
+        this.id = id;
+    }
     public String getAddress() {
         return address;
     }
@@ -121,6 +130,7 @@ public class Student {
     }
 
     public void setState( String state ) {
+
         this.state = state;
     }
 
@@ -132,17 +142,6 @@ public class Student {
     public void setCountry( String country ) {
         this.country = country;
     }
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId( Long id ) {
-
-        this.id = id;
-    }
-
     public String getName() {
 
         return name;
@@ -151,5 +150,7 @@ public class Student {
     public void setName( String name ) {
         this.name = name;
     }
+
+
 
 }
