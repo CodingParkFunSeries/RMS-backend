@@ -10,8 +10,16 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: ./mvnw package -Pprod -DskipTests
-  displayName: 'BUILD: creating production build'
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    options: '-Dspring.profiles.active=dev'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.8'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: false
+    goals: 'package'
 - task: CopyFiles@2
   inputs:
     SourceFolder: 'target'
