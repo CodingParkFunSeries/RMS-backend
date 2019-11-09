@@ -21,7 +21,7 @@ import com.codingParkFun.rmsbackend.model.Subject;
 import com.codingParkFun.rmsbackend.service.SubjectService;
 
 @RestController
-@RequestMapping("schools/{schoolId}/semesters/{semesterId}/batches/{batchId}/subjects")
+@RequestMapping("/schools/{schoolId}/semesters/{semesterId}/batches/{batchId}/subjects")
 public class SubjectController {
 
 	@Autowired

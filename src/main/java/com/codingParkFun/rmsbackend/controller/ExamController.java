@@ -19,7 +19,7 @@ import com.codingParkFun.rmsbackend.model.Exam;
 import com.codingParkFun.rmsbackend.service.ExamService;
 
 @RestController
-@RequestMapping("schools/{schoolId}/semesters/{semesterId}/batches/{batchId}/exams")
+@RequestMapping("/schools/{schoolId}/semesters/{semesterId}/batches/{batchId}/exams")
 public class ExamController {
 
 	@Autowired

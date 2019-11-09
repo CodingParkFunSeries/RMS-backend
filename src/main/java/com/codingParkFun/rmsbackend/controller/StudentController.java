@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("schools/{schoolId}/batches/{batchId}/students")
+@RequestMapping("/schools/{schoolId}/batches/{batchId}/students")
 public class StudentController {
 
 	@Autowired
