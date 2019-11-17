@@ -9,13 +9,13 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.codingParkFun.rmsbackend.service.DBUserDetailsService;
+import com.codingParkFun.rmsbackend.service.UsersService;
 
 @Configuration
 public class RMSSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
-	DBUserDetailsService userDetailsService;
+	UsersService userDetailsService;
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
